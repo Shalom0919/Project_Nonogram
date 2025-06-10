@@ -1078,9 +1078,8 @@ void loop_BIG(GameState& game)
 
 		if (ret == CCT_MOUSE_EVENT) {
 			cct_showstr(9, hint_rows + game.rows * 4 + 5, "[当前光标] ");
-			// 修改判断条件：除了检查网格范围，还要检查是否在边框上
 			if (grid_x >= 0 && grid_x < game.cols && grid_y >= 0 && grid_y < game.rows &&
-				cell_x >= 1 && cell_x <= 4 && cell_y >= 1 && cell_y <= 2) {
+				cell_x >= 0 && cell_x <= 5 && cell_y >= 0 && cell_y <= 2) {
 				if (maction == MOUSE_ONLY_MOVED && (grid_x != grid_oldx || grid_y != grid_oldy)) {
 					char r[2];
 					r[0] = 'A' + grid_y;
